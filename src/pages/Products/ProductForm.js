@@ -9,6 +9,7 @@ import {database,storage} from '../../config/firebaseConfig';
 import {ref as stRef,uploadBytes,getDownloadURL} from 'firebase/storage';
 import { withRouter, useLocation } from "react-router-dom";
 import {Input} from "@mui/material";
+import Stack from '@mui/material/Stack';
 
 const ProductForm=(props)=>{
     const location = useLocation();
@@ -112,13 +113,13 @@ useEffect(() => {
             <Grid container spacing={12} component="form" onSubmit={handleSubmit}
                sx={{mt:3, justifyContent:'center'}}
             >
-                <Grid item container xs={12}md={6} spacing={12}>
+                <Grid item container xs={12}md={6} spacing={3}>
                     <Grid item xs={12}>
                         <TextField
                         name="sku"
                         required
                         fullWidth
-                        label="Sku"
+                        label="Nombre"
                         value={product.sku}
                         onChange={handleChangue}
                         autoFocus
@@ -126,15 +127,14 @@ useEffect(() => {
                     </Grid> 
                     <Grid item xs={12}>
                         <TextField
-                        name="description"
+                        name="price"
                         required
                         fullWidth
-                        label="Descripcciòn"
-                        value={product.description}
+                        label="Precio"
+                        value={product.price}
                         onChange={handleChangue}
-       
                         />
-                    </Grid> 
+                 </Grid>
                     <Grid item xs={12}>
                         <TextField
                         name="stock"
@@ -145,16 +145,7 @@ useEffect(() => {
                         onChange={handleChangue}
                         />
                  </Grid>
-                 <Grid item xs={12}>
-                        <TextField
-                        name="price"
-                        required
-                        fullWidth
-                        label="Precio"
-                        value={product.price}
-                        onChange={handleChangue}
-                        />
-                 </Grid>
+               
                  <Grid item xs={12}>
                      <Input
                      type="file"
@@ -178,16 +169,22 @@ useEffect(() => {
                   {product.image && (
                       <Grid item xs={12} sx={{m:5,textAlign:'center'}}>
                           <img src={product.image}
-                          style={{ height:'120px', width:'auto', fitObject: 'center' }}
+                          style={{ height:'120px', width:'100px', fitObject: 'center' }}
                           />
                         </Grid>
                   )}
-                  <Grid item xs={12} sx={{m:5,textAlign:'center'}}>
+                  <Grid item xs={12} sx={{m:5,textAlign:'left'}} >
+             
                   <Button 
+                  
                         type="submit"
-                        variant="conteined " startIcon={<SaveIcon />}>
-                        Guardar producto
+                        variant="conteined "  >
+                        Guardar 
+                        
                     </Button>
+                    
+      
+
                 </Grid>
                </Grid>
              </Grid>

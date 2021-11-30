@@ -16,7 +16,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { menuItems } from './menu';
-
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import FirstPageIcon from '@mui/icons-material/FirstPage';
+import AppsIcon from '@mui/icons-material/Apps';
+import GridViewIcon from '@mui/icons-material/GridView';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 function Copyright(props) {
   return (
@@ -87,12 +91,12 @@ const DashboardContent = (props) => {
 
   return (
     <ThemeProvider theme={mdTheme}>
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', textAlign: 'center'}}>
         <CssBaseline />
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: '100px',bgcolor: 'warning.main'  // keep right padding when drawer closed
             }}
           >
             <IconButton
@@ -105,7 +109,7 @@ const DashboardContent = (props) => {
                 ...(open && { display: 'none' }),
               }}
             >
-              <MenuIcon />
+              <GridViewIcon />
             </IconButton>
             <Typography
               component="h1"
@@ -114,10 +118,10 @@ const DashboardContent = (props) => {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              App name
+              App Mezcal TA
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={25} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -133,7 +137,7 @@ const DashboardContent = (props) => {
             }}
           >
             <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
+              <KeyboardBackspaceIcon  />
             </IconButton>
           </Toolbar>
           <Divider />
@@ -152,7 +156,7 @@ const DashboardContent = (props) => {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4,   }}>
            {props.children}
             <Copyright sx={{ pt: 4 }} />
           </Container>

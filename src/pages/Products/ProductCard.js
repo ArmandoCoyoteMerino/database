@@ -13,17 +13,17 @@ import { Link } from 'react-router-dom';
 
 export default function productCard({ product, onDelete }) {
   return (
-    <Card sx={{ maxWidth: 250, m: 3, display: 'block'}}>
+    <Card sx={{ maxWidth: 200, m: 3, display: 'block'}}>
       <CardMedia
         component="img"
-        height="140"
+        height="250"
         image={product.image}
         alt={product.description}
         sx={{
           p: '2px',
           objectFit: 'cover',
           width: '100%',
-          height: 'auto'
+          height: '2'
         }}
       />
       <CardContent>
@@ -36,7 +36,7 @@ export default function productCard({ product, onDelete }) {
                $ {product.price}
             </Typography>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={10}>
                 {product.stock > 0 && (
                 <Chip label="Disponible" color="success" />
                 )}
