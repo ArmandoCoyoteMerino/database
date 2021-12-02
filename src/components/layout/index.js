@@ -16,7 +16,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { menuItems } from './menu';
-
+import { palette } from '@mui/system';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import GridViewIcon from '@mui/icons-material/GridView';
 
 function Copyright(props) {
   return (
@@ -87,12 +89,12 @@ const DashboardContent = (props) => {
 
   return (
     <ThemeProvider theme={mdTheme}>
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', spacing:'2'}}>
         <CssBaseline />
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              pr: '24px', backgroundColor:'black' // keep right padding when drawer closed
             }}
           >
             <IconButton
@@ -101,23 +103,24 @@ const DashboardContent = (props) => {
               aria-label="open drawer"
               onClick={toggleDrawer}
               sx={{
+                
                 marginRight: '36px',
                 ...(open && { display: 'none' }),
               }}
             >
-              <MenuIcon />
+              <GridViewIcon  />
             </IconButton>
             <Typography
               component="h1"
               variant="h6"
               color="inherit"
               noWrap
-              sx={{ flexGrow: 1 }}
+              sx={{ flexGrow: 1}}
             >
-              App name
+              App Mezcal TA
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={28} color="primary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -130,10 +133,11 @@ const DashboardContent = (props) => {
               alignItems: 'center',
               justifyContent: 'flex-end',
               px: [1],
+
             }}
           >
             <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
+              <KeyboardBackspaceIcon />
             </IconButton>
           </Toolbar>
           <Divider />
